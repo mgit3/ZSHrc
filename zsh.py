@@ -4,6 +4,8 @@ import subprocess
 import os
 import time
 
+#m3 is my hostname
+
 print("""
 
 0 == m3   >>> root
@@ -19,7 +21,8 @@ menu = int(input("how do you wanna overwrite the files?"))
 
 if menu == 0:
   zsh = "cp /home/m3/.zshrc /root/.zshrc"
-   
+       
+      
 if menu == 1:
   zsh = "cp /root/.zshrc /home/m3/.zshrc|chmod 777 /home/m3/.zshrc"
 
