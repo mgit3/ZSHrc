@@ -1,0 +1,20 @@
+import subprocess
+import os
+import time
+
+# m3 is my hostname
+
+os.system("ls /home/m3/Music/")
+
+print("")
+
+name_music = input("name_music: ")
+
+def music():
+    subprocess.call("xdg-open " + "/home/m3/Music/" + name_music + ".webm",  shell = True )
+
+music()
+
+print("Congratulation!")
+print("")
+print("-----------------")
