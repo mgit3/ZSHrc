@@ -1,4 +1,4 @@
-###UPDATE YOUR ZSH SOURCE CODE FROM YOUR USER TO THE ROOT USER OR TO THE ROOT USER TO YOUR DEFAULT USER.
+###AUTOMATICALLY COPY YOUR ZSH SOURCE CODE FROM YOUR USER TO THE ROOT USER OR TO THE ROOT USER TO YOUR DEFAULT USER.
 
 import subprocess
 import os
@@ -15,7 +15,7 @@ print("""
       """)  
 
 
-
+#REPLACE the word m3 to your hostname
 
 menu = int(input("how do you wanna overwrite the files?"))
 
@@ -30,4 +30,4 @@ def mv_zsh():
    subprocess.call( zsh ,  shell=True )
    print("Congratulation!")
 
-mv_zsh()
+mv_zsh
