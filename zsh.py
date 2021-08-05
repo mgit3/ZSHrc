@@ -1,7 +1,6 @@
 ###AUTOMATICALLY REPLACE YOUR ZSH SOURCE CODE FROM YOUR USER TO THE ROOT USER OR TO THE ROOT USER TO YOUR DEFAULT USER.
 
 import subprocess
-import os
 import time
 
 #m3 is my hostname
