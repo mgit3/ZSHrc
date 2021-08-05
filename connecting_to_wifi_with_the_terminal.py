@@ -1,5 +1,4 @@
 import subprocess
-import os
 import time
 
 interface="wlp2s0"
