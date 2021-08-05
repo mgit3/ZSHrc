@@ -1,5 +1,4 @@
 import subprocess
-import os
 
 link = input(str("Paste the Youtube link and hit enter >>> "))
 
