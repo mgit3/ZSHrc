@@ -1,7 +1,6 @@
 import subprocess
-import os
-print("")
 
+print("")
 def options():
 
     print("0 = unlock item; You will need to be logged as root to use this choice.")
