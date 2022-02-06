@@ -14,6 +14,7 @@ df = pd.DataFrame(files, columns=['file'])
 df.head()
 
 lst_re = [
+    (r'_\w_','_'),
     (r'\s|-+', '_'),
     (r'__', '_'),
     (r'\d',''),
@@ -52,5 +53,6 @@ df['new_name'] = df['new_name'].apply(lambda x: str(x).replace('.', f'_{str(rand
 
 for i,x in enumerate(df.file):
     os.rename(df.file[i], df.new_name[i])
+
 
 print(df) 
