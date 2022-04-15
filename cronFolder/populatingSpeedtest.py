@@ -7,17 +7,15 @@ import pandas as pd
 #%%
 
 # setting the name of the columns
-lst_columns = ['Sponsor', 'Server Name', 'Timestamp','Distance', 'Ping', 'Download', 'Upload'] 
+lst_columns = 'Server ID,Sponsor,Server Name,Timestamp,Distance,Ping,Download,Upload,Share,IP Address'.split(",") 
 
 #reading the new file with pandas
 tempCSV = 'dataset_speedtest/temp.csv'
 dfA = pd.read_csv(tempCSV, names=lst_columns)
-
 #%%
-
 # reading the main dataset with pandas
-excelFile = 'dataset_speedtest/speedTest.xlsx'
-dfB = pd.read_excel(excelFile)
+file = 'dataset_speedtest/speedTest.csv'
+dfB = pd.read_csv(file)
 
 #%%
 
@@ -26,4 +24,6 @@ newDf = pd.concat([dfA,dfB],axis=0)
 newDf = newDf[lst_columns]
 
 # writing over to the the main dataset 
-newDf.to_excel(excelFile)
+newDf.to_csv(file)
+
+# %%

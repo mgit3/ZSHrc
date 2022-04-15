@@ -1,8 +1,11 @@
 
+#%%
 import pandas as pd 
+#%%
+lst_columns = 'Server ID,Sponsor,Server Name,Timestamp,Distance,Ping,Download,Upload,Share,IP Address'.split(",")
+print(lst_columns)
+#%%
+df = pd.DataFrame( columns=lst_columns)
 
-lst_columns = ['Sponsor', 'Server Name', 'Timestamp','Distance', 'Ping', 'Download', 'Upload']
-
-df = pd.read_csv('dataset_speedtest/temp.csv', names=lst_columns)
-
-df.to_excel('dataset_speedtest/speedTest.xlsx')
+df.to_csv('dataset_speedtest/speedTest.csv')
+#%%
