@@ -1,0 +1,1 @@
+speedtest-cli --csv > csv_folder/temp.csv  
