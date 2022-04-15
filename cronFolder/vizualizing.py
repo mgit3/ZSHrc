@@ -20,17 +20,20 @@ show = tabulate(df, headers='keys',tablefmt="grid")
 print(show)
 #%%
 df['Timestamp'] = pd.to_datetime(df['Timestamp'],infer_datetime_format=True)
-df['Download'] = df['Download']/ (100**3)
+df['Download'] = df['Download'] / (100**3)
+df['Upload'] = df['Upload']  / (100**3)
 
-#%% 
+#%%
+fig = px.line(df,x=tm, y=[dw,up], labels={'x':'Timestamp', 'y':['Download','Upload']})
 
-dw =df['Download']
-tm =df['Timestamp']
-
-fig = px.scatter(x=tm, y=dw, labels={'x':'Timestamp', 'y':'Download'})
 fig.show()
 
+file = folderName + '/graph.html'
+fig.write_html(file)
+#%%
 
+up = df['Upload']
+up
 # %%
 
 # %%
