@@ -27,7 +27,7 @@ df['Download'] = df['Download']/ (100**3)
 dw =df['Download']
 tm =df['Timestamp']
 
-fig = px.scatter(x=tm, y=dw)
+fig = px.scatter(x=tm, y=dw, labels={'x':'Time', 'y':'Timestamp'})
 fig.show()
 
 
