@@ -2,7 +2,7 @@
 
 In this project, 
 
--I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and automated a scheduler with the Cron(Linux Software) to repeat the task periodically. 
+-I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
 -Then I organized the output data to be ingested into a dataset in a CSV format using the Pandas(Python module).
 
