@@ -1,24 +1,29 @@
 #%%
+
 from email import header
 from tabulate import tabulate
 import pandas as pd
-folderName = 'dataset_speedtest'
-file = folderName + '/temp.csv'
 
-columns = 'Server ID,Sponsor,Server Name,Timestamp,Distance,Ping,Download,Upload,Share,IP Address';lst_columns = columns.split(',')
-dfA = pd.read_csv(file, names=lst_columns)
-
-showA = tabulate(dfA, headers='keys')
-print(showA)
 #%%
-excelFile = folderName + '/speedTest.xlsx'
+
+# setting the name of the columns
+lst_columns = ['Sponsor', 'Server Name', 'Timestamp','Distance', 'Ping', 'Download', 'Upload'] 
+
+#reading the new file with pandas
+tempCSV = 'dataset_speedtest/temp.csv'
+dfA = pd.read_csv(tempCSV, names=lst_columns)
+
+#%%
+
+# reading the main dataset with pandas
+excelFile = 'dataset_speedtest/speedTest.xlsx'
 dfB = pd.read_excel(excelFile)
 
-showB = tabulate(dfB, headers='keys')
-print(showB)
 #%%
+
+# concatenating the new data to the main dataset
 newDf = pd.concat([dfA,dfB],axis=0)
 newDf = newDf[lst_columns]
-newDf.to_excel(excelFile)
 
-# %%
+# writing over to the the main dataset 
+newDf.to_excel(excelFile)

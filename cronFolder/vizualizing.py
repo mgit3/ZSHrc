@@ -6,34 +6,35 @@ from tabulate import tabulate
 import pandas as pd
 import plotly.express as px
 #%%
-folderName = 'dataset_speedtest'
-excelFile = folderName + '/speedTest.xlsx'
-df = pd.read_excel(excelFile)
-#%%
-print(df.columns)
 
-lstCln = ['Sponsor', 'Server Name', 'Timestamp',
-       'Distance', 'Ping', 'Download', 'Upload'] 
+#giving the name of where the dataset is located
+file = 'dataset_speedtest/speedTest.xlsx'
+# reading the Dataset with pandas
+df = pd.read_excel(file)
+
 #%%
-df = df [lstCln]
-show = tabulate(df, headers='keys',tablefmt="grid")
-print(show)
+
+# filtering the columns
+df = df [['Sponsor', 'Server Name', 'Timestamp','Distance', 'Ping', 'Download', 'Upload']] 
+
+# using the tabulate module to show in a cool way the data on the terminal
+print(tabulate(df, headers='keys',tablefmt="grid")
 #%%
+# transforming the 'Timestamp' column in a datatetime on Pandas
 df['Timestamp'] = pd.to_datetime(df['Timestamp'],infer_datetime_format=True)
+
+#change the scale on of the value to be more readable
 df['Download'] = df['Download'] / (100**3)
 df['Upload'] = df['Upload']  / (100**3)
 
 #%%
-fig = px.line(df,x=tm, y=[dw,up], labels={'x':'Timestamp', 'y':['Download','Upload']})
 
-fig.show()
+#using the plotly modelu to produce a graph
+fig = px.line(df,
+            x=tm, 
+            y=[dw,up], 
+            labels={'x':'Timestamp', 'y':['Download','Upload']});fig.show()
 
-file = folderName + '/graph.html'
+#transforming the graph into html
+file = 'dataset_speedtest/graph.html'
 fig.write_html(file)
-#%%
-
-up = df['Upload']
-up
-# %%
-
-# %%

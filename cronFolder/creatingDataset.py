@@ -1,17 +1,8 @@
-from tabulate import tabulate
+
 import pandas as pd 
 
+lst_columns = ['Sponsor', 'Server Name', 'Timestamp','Distance', 'Ping', 'Download', 'Upload']
 
-folderName = 'dataset_speedtest'
-file = folderName + '/temp.csv'
+df = pd.read_csv('dataset_speedtest/temp.csv', names=lst_columns)
 
-columns = 'Server ID,Sponsor,Server Name,Timestamp,Distance,Ping,Download,Upload,Share,IP Address'
-lst_columns = columns.split(',')
-
-csvFile = pd.read_csv(file, names=lst_columns)
-csvFile = csvFile[lst_columns]
-# show = tabulate(csvFile, headers='keys')
-excelFile = folderName + '/speedTest.xlsx'
-csvFile.to_excel(excelFile)
-
-
+df.to_excel('dataset_speedtest/speedTest.xlsx')
