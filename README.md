@@ -8,6 +8,6 @@ In this project,
 
 -From the dataset, I produce an interactive graph about my upload and download rate using the Plotly(Python module). 
 
--And finally, I share the graph on the internet through the (AWS cloud) using the boto3(Python module). 
+-And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the boto3(Python module). 
 
 output >>> http://roberto-server.s3.amazonaws.com/graph.html
