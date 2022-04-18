@@ -1,10 +1,6 @@
 #%%
-from datetime import datetime
-from email import header
-from regex import D
 from tabulate import tabulate
 import pandas as pd
-import plotly.express as px
 #%%
 
 #giving the name of where the dataset is located
