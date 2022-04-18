@@ -3,3 +3,4 @@ sudo apt-get install speedtest-cli
 
 pip install plotly
 pip install --upgrade nbformat
+pip install tabulate
