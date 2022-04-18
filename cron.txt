@@ -1,0 +1,2 @@
+* * * * * bash speedTest.sh
+* * * * * python3 populatingSpeedtest.py 
