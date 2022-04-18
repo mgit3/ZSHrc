@@ -1,2 +1,2 @@
-echo "0 * * * * bash speedTest.sh" | crontab
-echo "5 * * * * python3 populatingSpeedtest.py" | crontab
+echo "* * * * * bash speedTest.sh" | crontab 
+echo "* * * * * python3 populatingSpeedtest.py" | crontab 
