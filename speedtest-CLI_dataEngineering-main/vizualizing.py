@@ -34,7 +34,7 @@ df['Upload'] = df['Upload'] / (100**3)
 #%%
 
 #using the plotly modelu to produce a graph
-fig = px.line(df,
+fig = px.scatter(df,
             x=df.Timestamp, 
             y=[df.Download,df.Upload], 
             labels={'x':'Timestamp', 'y':['Download','Upload']})

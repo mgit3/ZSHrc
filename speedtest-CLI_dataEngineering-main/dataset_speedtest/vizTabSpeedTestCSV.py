@@ -26,3 +26,4 @@ df['Upload'] = df['Upload'] / (100**3)
 
 # using the tabulate module to show in a cool way the data on the terminal
 print(tabulate(df, headers='keys',tablefmt="grid"))
+
