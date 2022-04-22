@@ -1,21 +1,15 @@
 #%%
-from datetime import datetime
-from email import header
-from regex import D
-from tabulate import tabulate
+from sqlalchemy import create_engine
+from sqlalchemy import MetaData 
+from sqlalchemy import Table
 import pandas as pd
 import plotly.express as px
 #%%
-
-#giving the name of where the dataset is located
-file = 'dataset_speedtest/speedTest.csv'
-# reading the Dataset with pandas
-df = pd.read_csv(file)
-
-#%%
-
-# filtering the columns
-df = df [['Sponsor', 'Server Name', 'Timestamp','Distance', 'Ping', 'Download', 'Upload']] 
+tableName ='speedtest' 
+engine = create_engine("sqlite:///dataset_speedtest/main.db")
+query = "select * from speedtest"
+# Load entire weather table by table name
+df = pd.read_sql(query,engine)
 
 #%%
 #using the plotly modelu to produce a graph
@@ -28,4 +22,3 @@ fig.show()
 #transforming the graph into html
 file = 'dataset_speedtest/graph.html'
 fig.write_html(file)
-
