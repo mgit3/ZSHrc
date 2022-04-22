@@ -1,3 +1,6 @@
+IN PROGRESS, I'AM CHANGING A LOT OF THINGS TO START USE A DB!
+
+
 In this project, 
 
 -I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
