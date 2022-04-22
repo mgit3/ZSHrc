@@ -1,12 +1,18 @@
 import pandas as pd
 from tabulate import tabulate
+from sqlalchemy import create_engine
+from sqlalchemy import MetaData 
+from sqlalchemy import Table
 
+# reading the main dataset with pandas
+tableName ='speedtest' 
+engine = create_engine("sqlite:///dataset_speedtest/main.db")
+metadata = MetaData()
+# metadata = MetaData()
 
-df=pd.read_csv('dataset_speedtest/speedTest.csv')
+query = "select * from speedtest"
+# Load entire weather table by table name
+df = pd.read_sql(query,engine)
 
-lst_columns = 'Server ID,Sponsor,Server Name,Timestamp,Distance,Ping,Download,Upload,Share,IP Address'.split(",") 
-
-df = df[lst_columns]
-print(tabulate(df, headers = lst_columns, tablefmt="grid"))
-
-
+print(df)
+print(tabulate(df, headers="keys", tablefmt="grid"))
