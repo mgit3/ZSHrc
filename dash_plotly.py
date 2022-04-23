@@ -1,5 +1,6 @@
 #%%
 from click import style
+from matplotlib.pyplot import margins
 from sqlalchemy import create_engine
 from sqlalchemy import MetaData 
 from sqlalchemy import Table
@@ -29,16 +30,38 @@ app = dash.Dash(__name__)
 
 author = "Roberto"; lastName = "Moreira Diniz"; fullName = f"{author} {lastName}"; profession = "Data Engineer"
 dashTitle = f"{author}'s Dashboard"  
+logo_link = 'https://seeklogo.com/images/E/endless_knot-logo-1A4534EFCF-seeklogo.com.png'
 
-
-# Set up the layout with a single graph
-app.layout = html.Div(children=[
+app.layout = html.Div(
+  children=[
     html.Div(style={'width':1000,'height':10,'background-color':'darkblue'}),
     html.H1(dashTitle),
     html.Br(),
-    html.Span(children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."]),
-    dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up)
-    ]
+    html.Span(children=[f"Prepared: {dt.now().date()} by {fullName} {profession}."]),
+    dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,style={'width':'900px', 'margin':'auto'}),
+    
+    
+    html.Span(children=[
+    html.B('HIGHEST:'),
+    html.Ol(children=[
+      	# Add two list elements with the top category variables
+        html.Li(children=[f"Download speed - {round(df['Download'].max(),2)} Mb/s."]),
+        html.Li(children=[f"Upload speed - {round(df['Upload'].max(),2)} Mb/s."]),
+        ],style={'width':'350px', 'margin':'auto'}),
+    html.Br(),
+    ]),
+
+    html.Span(children=[
+    html.B('LOWEST:'),
+    html.Ol(children=[
+      	# Add two list elements with the top category variables
+        html.Li(children=[f"Download speed - {round(df['Download'].min(),2)} Mb/s."]),
+        html.Li(children=[f"Upload speed - {round(df['Upload'].min(),2)} Mb/s."]),
+        ],style={'width':'350px', 'margin':'auto'}),
+    html.Br(),
+    ]),
+
+  ]
 )
 
 # Set the app to run in development mode
@@ -48,3 +71,5 @@ if __name__ == '__main__':
 #transforming the graph into html
 file = 'dataset_speedtest/graph.html'
 fig_scatter_dw_up.write_html(file)
+
+    # html.Img(src=logo_link, style={'width':30,'height':30}),
