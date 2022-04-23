@@ -5,3 +5,4 @@ pip install plotly
 pip install --upgrade nbformat
 pip install tabulate
 pip install sqlalchemy
+pip install dash
