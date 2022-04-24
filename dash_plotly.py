@@ -31,14 +31,19 @@ app = dash.Dash(__name__)
 author = "Roberto"; lastName = "Moreira Diniz"; fullName = f"{author} {lastName}"; profession = "Data Engineer"
 dashTitle = f"{author}'s Dashboard"  
 logo_link = 'https://seeklogo.com/images/E/endless_knot-logo-1A4534EFCF-seeklogo.com.png'
+myColor =   'rgb(54, 69, 99)'
+textColor =   'white'
 
 app.layout = html.Div(
   children=[
-    html.Div(style={'width':1000,'height':10,'background-color':'darkblue'}),
+    html.Br(),
+    html.Div(style={'width':10000,'height':10,'background-color':'white'}),
     html.H1(dashTitle),
     html.Br(),
     html.Span(children=[f"Prepared: {dt.now().date()} by {fullName} {profession}."]),
-    dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,style={'width':'900px', 'margin':'auto'}),
+    html.Br(),html.Br(),
+    dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,style={'width':'900px', 'margin':'auto', 'background-color': myColor}),
+    html.Br(),
     
     
     html.Span(children=[
@@ -61,7 +66,9 @@ app.layout = html.Div(
     html.Br(),
     ]),
 
-  ]
+    html.Div(style={'width':10000,'height':10,'background-color':'white'}),
+    html.Br(),
+  ],style={'text-align':'center', 'font-size':22, 'background-color':myColor, 'color':textColor}
 )
 
 # Set the app to run in development mode
