@@ -24,6 +24,11 @@ fig_scatter_dw_up = px.scatter(df,
             y=[df.Download,df.Upload], 
             labels={'x':'Timestamp', 'y':['Download','Upload']},
             title="Download and Upload Speed").update_layout(paper_bgcolor=graphColor)
+
+
+fig_boxPlotDW = px.box(df['Download']).update_layout(paper_bgcolor=graphColor)        
+fig_boxPlotUP= px.box(df['Upload']).update_layout(paper_bgcolor=graphColor)        
+
 #%%
 
 # Create the Dash app
@@ -47,13 +52,35 @@ app.layout = html.Div(
     html.Span(children=[f"Prepared: {dt.now().date()} by {fullName} {profession}."]),
     html.Br(),
 
-    html.Span(children=[
         
+    html.Span(children=[
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
     'width':'900px', 
     'margin':'auto', 
     }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
+
+    dash_table.DataTable(
+      id='table',
+      data = df.to_dict('records'),
+      style_cell={'padding': '5px','backgroundColor':myColor},
+      style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'},
+      ),
+
+    html.Span(children=[
+    dcc.Graph(id='boxPLotDW',figure=fig_boxPlotDW,
+      style={
+      'width':'500px', 
+      'margin':'auto', 
+      }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
+    
+    html.Span(children=[
+    dcc.Graph(id='boxPLotUP',figure=fig_boxPlotUP,
+      style={
+      'width':'500px', 
+      'margin':'auto', 
+      }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
+
     
     html.Span(children=[
 
@@ -65,7 +92,7 @@ app.layout = html.Div(
         ],style={'width':'350px'}),html.Br(),
 
     html.Ul(children=[
-        html.B('MIDDLE:'),
+        html.B('AVERAGE:'),
       	# Add two list elements with the top category variables
         html.Li(children=[f"Download speed - {round(df['Download'].mean(),2)} Mb/s."]),
         html.Li(children=[f"Upload speed - {round(df['Upload'].mean(),2)} Mb/s."]),
@@ -77,15 +104,16 @@ app.layout = html.Div(
         html.Li(children=[f"Download speed - {round(df['Download'].min(),2)} Mb/s."]),
         html.Li(children=[f"Upload speed - {round(df['Upload'].min(),2)} Mb/s."]),
         ],style={'width':'350px'}),html.Br(),
+
+    html.Ul(children=[
+        html.B('STANDARD DESVIATION:'),
+      	# Add two list elements with the top category variables
+        html.Li(children=[f"Download speed - {round(df['Download'].std(),2)} Mb/s."]),
+        html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
+        ],style={'width':'350px'}),html.Br(),
     
     ],style={'text-align':'top','display':'inline-block', 'margin':'10px 10px 30px 100px'}), 
 
-    dash_table.DataTable(
-      id='table',
-      data = df.to_dict('records'),
-      style_cell={'padding': '5px','backgroundColor':myColor},
-      style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'},
-      ),
 
     html.Div(style={'width':10000,'height':10,'background-color':'white'}),
     html.Br(),
