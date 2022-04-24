@@ -20,6 +20,8 @@ query = "select * from speedtest"; df = pd.read_sql(query,engine)
 #%%
 #using the plotly modelu to produce a graph
 graphColor = 'rgb(240, 245, 245)'
+bluePlotly = 'rgb(99, 110, 250)'
+redPlotly = 'rgb(239, 85, 59)'
 fig_scatter_dw_up = px.scatter(df,
             x=df.Timestamp, 
             y=[df.Download,df.Upload], 
@@ -29,8 +31,8 @@ fig_scatter_dw_up = px.scatter(df,
 
 fig_boxPlot = go.Figure()
 # Use x instead of y argument for horizontal plot
-fig_boxPlot.add_trace(go.Box(x=df['Download'], name='DOWNLOAD',marker_color = 'indianred'))
-fig_boxPlot.add_trace(go.Box(x=df['Upload'],  name='UPLOAD',marker_color = 'lightseagreen'))
+fig_boxPlot.add_trace(go.Box(x=df['Download'], name='DOWNLOAD',marker_color = bluePlotly))
+fig_boxPlot.add_trace(go.Box(x=df['Upload'],  name='UPLOAD',marker_color = redPlotly))
 
 
 #%%
@@ -54,13 +56,13 @@ app.layout = html.Div(
     
     html.H1(dashTitle),
     html.Span(children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."]),
-    html.Br(),
+    html.Br(),html.Br(),
 
         
     html.Span(children=[
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
-    'width':'1600px', 
+    'width':'1795px', 
     'margin':'auto', 
     }), html.Br()], style={'color': textColor, 'display': 'inline-block', 'margin': 'auto'}),
 
@@ -75,8 +77,8 @@ app.layout = html.Div(
     html.Span(children=[
     dcc.Graph(id='boxPLot',figure=fig_boxPlot,
       style={
-      'width':'900px',
-      'height':'400px', 
+      'width':'1260px',
+      'height':'460px', 
       'margin':'auto', 
       }),html.Br()],style={'color':textColor, 'display':'inline-block','padding':'200px auto'}),
     
