@@ -52,7 +52,7 @@ tableHeaderColor = 'rgb(91, 138, 215)'
 app.layout = html.Div(
   children=[
     html.Br(),
-    html.Div(style={'width':10000,'height':10,'background-color':'white'}),
+    html.Div(style={'width':10000,'height':5,'background-color':'white'}),
     
     html.H1(dashTitle),
     html.Span(children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."]),
@@ -63,7 +63,7 @@ app.layout = html.Div(
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
     'width':'1795px',
-    'height':'700px', 
+    'height':'800px', 
     'margin':'auto', 
     }), html.Br()], 
     style={
@@ -91,7 +91,7 @@ app.layout = html.Div(
       'margin':'50 px auto', 
       'padding':'200px auto',
       'border':'12px solid', 
-      'border-radius': 20,  
+      'border-radius': 30,  
             }),html.Br()],style={'color':textColor,'display':'inline-block',}),
     
     
@@ -127,7 +127,7 @@ app.layout = html.Div(
     ],style={'font-size':'18px','display':'inline-block', 'margin':'0px 50px 150px 80px'}), 
 
 
-    html.Div(style={'width':10000,'height':10,'background-color':'white'}),
+    html.Div(style={'width':10000,'height':5  ,'background-color':'white'}),
     html.Br(),
   ],style={
     'text-align':'center', 
