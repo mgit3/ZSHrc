@@ -29,6 +29,8 @@ fig_scatter_dw_up = px.scatter(df,
 # Create the Dash app
 app = dash.Dash(__name__)
 
+
+#transforming the graph into html
 author ="Roberto"; lastName = "Moreira Diniz"; fullName = f"{author} {lastName}"; profession = "Data Engineer"
 dashTitle =f"{author}'s Dashboard"  
 logo_link ='https://seeklogo.com/images/E/endless_knot-logo-1A4534EFCF-seeklogo.com.png'
@@ -98,8 +100,4 @@ app.layout = html.Div(
 if __name__ == '__main__':
     app.run_server(debug=True)
 
-#transforming the graph into html
-file = 'dataset_speedtest/graph.html'
-fig_scatter_dw_up.write_html(file)
-
-    # html.Img(src=logo_link, style={'width':30,'height':30}),
+# html.Img(src=logo_link, style={'width':30,'height':30}),
