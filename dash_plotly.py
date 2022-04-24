@@ -49,14 +49,14 @@ app.layout = html.Div(
     html.Div(style={'width':10000,'height':10,'background-color':'white'}),
     
     html.H1(dashTitle),
-    html.Span(children=[f"Prepared: {dt.now().date()} by {fullName} {profession}."]),
+    html.Span(children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."]),
     html.Br(),
 
         
     html.Span(children=[
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
-    'width':'900px', 
+    'width':'1600px', 
     'margin':'auto', 
     }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
 
