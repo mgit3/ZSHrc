@@ -26,7 +26,7 @@ fig_scatter_dw_up = px.scatter(df,
             x=df.Timestamp, 
             y=[df.Download,df.Upload], 
             labels={'x':'Timestamp', 'y':['Download','Upload']},
-            title="Download and Upload Speed").update_layout(paper_bgcolor='white')
+            title="Download and Upload Speed").update_layout(paper_bgcolor=graphColor)
 
 
 fig_boxPlot = go.Figure()
@@ -52,7 +52,7 @@ tableHeaderColor = 'rgb(91, 138, 215)'
 app.layout = html.Div(
   children=[
     html.Br(),
-    html.Div(style={'width':10000,'height':5,'background-color':'white'}),
+    html.Div(style={'width':10000,'height':10,'background-color':'white'}),
     
     html.H1(dashTitle),
     html.Span(children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."]),
@@ -62,18 +62,9 @@ app.layout = html.Div(
     html.Span(children=[
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
-    'width':'1795px',
-    'height':'400px', 
+    'width':'1795px', 
     'margin':'auto', 
-    }), html.Br()], 
-    style={
-      'backgroundColor':'white',
-      'color': textColor, 
-      'display': 'inline-block', 
-      'margin': 'auto',
-      'border':'12px solid', 
-      'border-radius': 30,
-      }),
+    }), html.Br()], style={'color': textColor, 'display': 'inline-block', 'margin': 'auto'}),
 
     html.Span(children=[
     dash_table.DataTable(
@@ -81,21 +72,19 @@ app.layout = html.Div(
       data = df.to_dict('records'),
       style_cell={'padding': '5px','backgroundColor':myColor},
       style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'})
-    ],style={'color':textColor, 'display':'inline-block','margin':'50px 50px 50px'}),
+    ],style={'color':textColor, 'display':'inline-block','margin':'auto'}),
 
     html.Span(children=[
     dcc.Graph(id='boxPLot',figure=fig_boxPlot,
       style={
       'width':'1260px',
-      'height':'440px', 
-      'margin':'50 px auto', 
-      'padding':'200px auto',
-      'border':'12px solid', 
-      'border-radius': 20,  
-            }),html.Br()],style={'color':textColor,'display':'inline-block',}),
+      'height':'460px', 
+      'margin':'auto', 
+      }),html.Br()],style={'color':textColor, 'display':'inline-block','padding':'200px auto'}),
     
     
     html.Span(children=[
+
     html.Ul(children=[
         html.B('HIGHEST:'),
       	# Add two list elements with the top category variables
@@ -124,10 +113,10 @@ app.layout = html.Div(
         html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
         ],style={'width':'350px'}),html.Br(),
     
-    ],style={'font-size':'18px','display':'inline-block', 'margin':'0px 50px 150px 80px'}), 
+    ],style={'font-size':'18px','display':'inline-block', 'margin':'50px 50px 50px 100px'}), 
 
 
-    html.Div(style={'width':10000,'height':5  ,'background-color':'white'}),
+    html.Div(style={'width':10000,'height':10,'background-color':'white'}),
     html.Br(),
   ],style={
     'text-align':'center', 
@@ -136,10 +125,8 @@ app.layout = html.Div(
     'color':textColor},
 )
 
-#transforming the graph into html
-file = 'dataset_speedtest/graph.html'
-fig_scatter_dw_up.write_html(file)
-
 # Set the app to run in development mode
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+# html.Img(src=logo_link, style={'width':30,'height':30}),
