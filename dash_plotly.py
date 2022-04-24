@@ -136,10 +136,10 @@ app.layout = html.Div(
     'color':textColor},
 )
 
+#transforming the graph into html
+file = 'dataset_speedtest/graph.html'
+fig_scatter_dw_up.write_html(file)
+
 # Set the app to run in development mode
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-#transforming the graph into html
-file = 'dataset_speedtest/graph.html'
-fig_boxPlot.write_html(file)
