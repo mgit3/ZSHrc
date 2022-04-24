@@ -140,4 +140,6 @@ app.layout = html.Div(
 if __name__ == '__main__':
     app.run_server(debug=True)
 
-# html.Img(src=logo_link, style={'width':30,'height':30}),
+#transforming the graph into html
+file = 'dataset_speedtest/graph.html'
+fig_boxPlot.write_html(file)
