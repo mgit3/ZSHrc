@@ -63,7 +63,7 @@ app.layout = html.Div(
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
     'width':'1795px',
-    'height':'800px', 
+    'height':'400px', 
     'margin':'auto', 
     }), html.Br()], 
     style={
@@ -91,7 +91,7 @@ app.layout = html.Div(
       'margin':'50 px auto', 
       'padding':'200px auto',
       'border':'12px solid', 
-      'border-radius': 30,  
+      'border-radius': 20,  
             }),html.Br()],style={'color':textColor,'display':'inline-block',}),
     
     
