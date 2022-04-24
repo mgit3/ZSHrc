@@ -6,6 +6,6 @@ In this project,
 
 -From the dataset, I produce an interactive graph about my upload and download rate using the Plotly(Python module). 
 
--Then, I share the graph on the internet through the S3(AWS Simple Cloud Storage) using the boto3(Python module). output >>> http://roberto-server.s3.amazonaws.com/graph.html
+-Then, I share the graph on the internet through the S3(AWS Simple Cloud Storage) using the boto3(Python module). Output: http://roberto-server.s3.amazonaws.com/graph.html
 
 -Finally, I made a dashboard('dash_plotly.py') using Dash and Plotly(Python modules). In this dashboard, I presented statistical information about the Download and Upload internet speed such as the maximum, minimum, median, and standard deviation rate. 
