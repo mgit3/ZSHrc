@@ -26,7 +26,7 @@ fig_scatter_dw_up = px.scatter(df,
             x=df.Timestamp, 
             y=[df.Download,df.Upload], 
             labels={'x':'Timestamp', 'y':['Download','Upload']},
-            title="Download and Upload Speed").update_layout(paper_bgcolor=graphColor)
+            title="Download and Upload Speed").update_layout(paper_bgcolor='white')
 
 
 fig_boxPlot = go.Figure()
@@ -62,9 +62,18 @@ app.layout = html.Div(
     html.Span(children=[
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={
-    'width':'1795px', 
+    'width':'1795px',
+    'height':'700px', 
     'margin':'auto', 
-    }), html.Br()], style={'color': textColor, 'display': 'inline-block', 'margin': 'auto'}),
+    }), html.Br()], 
+    style={
+      'backgroundColor':'white',
+      'color': textColor, 
+      'display': 'inline-block', 
+      'margin': 'auto',
+      'border':'12px solid', 
+      'border-radius': 30,
+      }),
 
     html.Span(children=[
     dash_table.DataTable(
@@ -72,19 +81,21 @@ app.layout = html.Div(
       data = df.to_dict('records'),
       style_cell={'padding': '5px','backgroundColor':myColor},
       style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'})
-    ],style={'color':textColor, 'display':'inline-block','margin':'auto'}),
+    ],style={'color':textColor, 'display':'inline-block','margin':'50px 50px 50px'}),
 
     html.Span(children=[
     dcc.Graph(id='boxPLot',figure=fig_boxPlot,
       style={
       'width':'1260px',
-      'height':'460px', 
-      'margin':'auto', 
-      }),html.Br()],style={'color':textColor, 'display':'inline-block','padding':'200px auto'}),
+      'height':'440px', 
+      'margin':'50 px auto', 
+      'padding':'200px auto',
+      'border':'12px solid', 
+      'border-radius': 20,  
+            }),html.Br()],style={'color':textColor,'display':'inline-block',}),
     
     
     html.Span(children=[
-
     html.Ul(children=[
         html.B('HIGHEST:'),
       	# Add two list elements with the top category variables
@@ -113,7 +124,7 @@ app.layout = html.Div(
         html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
         ],style={'width':'350px'}),html.Br(),
     
-    ],style={'font-size':'18px','display':'inline-block', 'margin':'50px 50px 50px 100px'}), 
+    ],style={'font-size':'18px','display':'inline-block', 'margin':'0px 50px 150px 80px'}), 
 
 
     html.Div(style={'width':10000,'height':10,'background-color':'white'}),
