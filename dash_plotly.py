@@ -5,9 +5,10 @@ from sqlalchemy import create_engine
 from sqlalchemy import MetaData 
 from sqlalchemy import Table
 import pandas as pd
-import dash 
+import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import plotly.graph_objects as go
 import dash_table
 import plotly.express as px
 from datetime import datetime as dt
@@ -26,8 +27,11 @@ fig_scatter_dw_up = px.scatter(df,
             title="Download and Upload Speed").update_layout(paper_bgcolor=graphColor)
 
 
-fig_boxPlotDW = px.box(df['Download']).update_layout(paper_bgcolor=graphColor)        
-fig_boxPlotUP= px.box(df['Upload']).update_layout(paper_bgcolor=graphColor)        
+fig_boxPlot = go.Figure()
+# Use x instead of y argument for horizontal plot
+fig_boxPlot.add_trace(go.Box(x=df['Download'], name='DOWNLOAD',marker_color = 'indianred'))
+fig_boxPlot.add_trace(go.Box(x=df['Upload'],  name='UPLOAD',marker_color = 'lightseagreen'))
+
 
 #%%
 
@@ -58,29 +62,24 @@ app.layout = html.Div(
     style={
     'width':'1600px', 
     'margin':'auto', 
-    }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
+    }), html.Br()], style={'color': textColor, 'display': 'inline-block', 'margin': 'auto'}),
 
+    html.Span(children=[
     dash_table.DataTable(
       id='table',
       data = df.to_dict('records'),
       style_cell={'padding': '5px','backgroundColor':myColor},
-      style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'},
-      ),
+      style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'})
+    ],style={'color':textColor, 'display':'inline-block','margin':'auto'}),
 
     html.Span(children=[
-    dcc.Graph(id='boxPLotDW',figure=fig_boxPlotDW,
+    dcc.Graph(id='boxPLot',figure=fig_boxPlot,
       style={
-      'width':'500px', 
+      'width':'auto',
+      'height':'1200', 
       'margin':'auto', 
-      }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
+      }),html.Br()],style={'color':textColor, 'display':'inline-block','padding':'200px auto'}),
     
-    html.Span(children=[
-    dcc.Graph(id='boxPLotUP',figure=fig_boxPlotUP,
-      style={
-      'width':'500px', 
-      'margin':'auto', 
-      }),html.Br()],style={'color':textColor, 'display':'inline-block','margin':'100px'}),
-
     
     html.Span(children=[
 
@@ -112,7 +111,7 @@ app.layout = html.Div(
         html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
         ],style={'width':'350px'}),html.Br(),
     
-    ],style={'text-align':'top','display':'inline-block', 'margin':'10px 10px 30px 100px'}), 
+    ],style={'font-size':'19px','display':'inline-block', 'margin':'50px 50px 50px 100px'}), 
 
 
     html.Div(style={'width':10000,'height':10,'background-color':'white'}),
