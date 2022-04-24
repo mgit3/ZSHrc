@@ -75,8 +75,8 @@ app.layout = html.Div(
     html.Span(children=[
     dcc.Graph(id='boxPLot',figure=fig_boxPlot,
       style={
-      'width':'auto',
-      'height':'1200', 
+      'width':'900px',
+      'height':'400px', 
       'margin':'auto', 
       }),html.Br()],style={'color':textColor, 'display':'inline-block','padding':'200px auto'}),
     
@@ -111,7 +111,7 @@ app.layout = html.Div(
         html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
         ],style={'width':'350px'}),html.Br(),
     
-    ],style={'font-size':'19px','display':'inline-block', 'margin':'50px 50px 50px 100px'}), 
+    ],style={'font-size':'18px','display':'inline-block', 'margin':'50px 50px 50px 100px'}), 
 
 
     html.Div(style={'width':10000,'height':10,'background-color':'white'}),
