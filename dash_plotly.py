@@ -115,7 +115,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
   html.Div(
     dash_table.DataTable(
     id='table',
-    data = df.tail(5).to_dict('records'),
+    data = df.tail(10).to_dict('records'),
     style_cell={
       'padding': '5px',
       'textAlign': 'left',
@@ -125,6 +125,14 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
       'fontWeight': 'bold'},
     ),style={'margin':marginSize}
   ),
+
+    html.Div(
+    children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."], style={
+      'textAlign': 'center',
+      'margin': 'auto',
+      'color': colors['text']
+  }),
+
 
 
 
