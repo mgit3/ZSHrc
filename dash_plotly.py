@@ -108,7 +108,7 @@ app.layout = html.Div(
         html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
         ],style={'width':'350px'}),html.Br(),
     
-    ],style={'font-size':'18px','display':'inline-block', 'margin':'50px 50px 50px 100px'}), 
+    ],style={'font-size':'18px','display':'inline-block', 'margin':f'50px 50px 50px {marginSize}'}), 
 
 
     html.Br(),
