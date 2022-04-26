@@ -6,3 +6,4 @@ pip install --upgrade nbformat
 pip install tabulate
 pip install sqlalchemy
 pip install dash
+pip install dash_bootstrap_components
