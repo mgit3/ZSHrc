@@ -55,57 +55,53 @@ marginSize = '20px'
 fontSize = '14xp'
 
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
-  html.H1(
-      children= dashTitle,
+  html.H1(children= dashTitle,
       style={
           'textAlign': 'center',
           'color': colors['text'],
-          'margin':'auto'
-      }
-  ),
+          'margin':'auto'}),
 
-  html.Div(
-    children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."], style={
+  html.Div(children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."], style={
       'textAlign': 'center',
       'margin': 'auto',
-      'color': colors['text']
-  }),
+      'color': colors['text']}),
 
   html.Br(),
 
-  html.Div(
-      dcc.Graph(
+  html.Div(dcc.Graph(
       figure=fig_scatter_dw_up,
       style={}),
-    style={'color':colors['text'], 'display':'inline-block', 'width':'1200xp','margin':f'auto auto auto {marginSize}'}),
+    style={'color':colors['text'], 
+      'display':'inline-block', 
+      'width':'1200xp',
+      'margin':f'auto auto auto {marginSize}'}),
   
-  html.Div(
-    dcc.Graph(id='boxPLot',figure=fig_boxPlot,
-      style={}),
-    style={'color':colors['text'], 'display':'inline-block', 'width':'350xp'}),
+  html.Div(dcc.Graph(
+      id='boxPLot',
+      figure=fig_boxPlot),
+    style={'color':colors['text'], 
+      'display':'inline-block', 
+      'width':'350xp'}),
 
   html.Span(children=[
+
     html.Ul(children=[
         html.B('HIGHEST:'),
-        # Add two list elements with the top category variables
         html.Li(children=[f"Download speed - {round(df['Download'].max(),2)} Mb/s."]),
         html.Li(children=[f"Upload speed - {round(df['Upload'].max(),2)} Mb/s."]),
         ],style={'width':'350px','display':'inline-block'}),
     html.Ul(children=[
         html.B('AVERAGE:'),
-        # Add two list elements with the top category variables
         html.Li(children=[f"Download speed - {round(df['Download'].mean(),2)} Mb/s."]),
         html.Li(children=[f"Upload speed - {round(df['Upload'].mean(),2)} Mb/s."]),
         ],style={'width':'350px','display':'inline-block'}),
     html.Ul(children=[
         html.B('LOWEST:'),
-        # Add two list elements with the top category variables
         html.Li(children=[f"Download speed - {round(df['Download'].min(),2)} Mb/s."]),
         html.Li(children=[f"Upload speed - {round(df['Upload'].min(),2)} Mb/s."]),
         ],style={'width':'350px','display':'inline-block'}),
     html.Ul(children=[
         html.B('STANDARD DESVIATION:'),
-        # Add two list elements with the top category variables
         html.Li(children=[f"Download speed - {round(df['Download'].std(),2)} Mb/s."]),
         html.Li(children=[f"Upload speed - {round(df['Upload'].std(),2)} Mb/s."]),
         ],style={'width':'350px','display':'inline-block'}),
@@ -126,10 +122,10 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
     ),style={'margin':marginSize}
   ),
 
-    html.Div(
-    children=[f"Prepared: {dt.now().date()} by {fullName}, {profession}."], style={
+    html.Div(children=[" "], style={
       'textAlign': 'center',
       'margin': 'auto',
+      'height': marginSize,
       'color': colors['text']
   }),
 
