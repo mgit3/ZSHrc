@@ -19,9 +19,11 @@ To use 4 the 1st time:
 
 Use the "mainFile.py" to run:
 
-  os.system("bash speedTest.sh") --> to collect data about your internet speed.
-  os.system("python3 populatingSpeedtest.py") --> populate the database with the new data
-  os.system("python3 dash_plotly.py") --> vizualize the models in the dashboard
+-os.system("bash speedTest.sh") --> to collect data about your internet speed.
+
+-os.system("python3 populatingSpeedtest.py") --> populate the database with the new data
+
+-os.system("python3 dash_plotly.py") --> vizualize the models in the dashboard
   
 To see the dashboard access this address "http://127.0.0.1:8050/" in your web-browser.
 
