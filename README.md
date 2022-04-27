@@ -1,4 +1,4 @@
-In this project, 
+**In this project, 
 
 -I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
@@ -10,14 +10,14 @@ In this project,
 
 output >>> http://roberto-server.s3.amazonaws.com/graph.html
 
-To use 4 the 1st time:
+**To use 4 the 1st time:
 
 -First install the requirements, with "install_requirements.sh" using bash.
 
 -Secondoly, create the dataset with "creatingDataset.py" using python.
 
 
-Use the "mainFile.py" to run:
+**Use the "mainFile.py" to run:
 
 -os.system("bash speedTest.sh") --> to collect data about your internet speed.
 
