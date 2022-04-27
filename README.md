@@ -1,12 +1,12 @@
 ### In this project, 
 
-1. I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
+1. I used __speedtest-CLI__ (Linux software) to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
-2. Then I organized the output data to be ingested into a dataset in a CSV format using the Pandas(Python module).
+2. Then I organized the output data to be ingested into a dataset in a CSV format using the __Pandas__ (Python module).
 
-3. From the dataset, I produce an interactive graph about my upload and download rate using the Plotly(Python module). 
+3. From the dataset, I produce an interactive graph about my upload and download rate using the __Plotly__ (Python module). 
  
-4. And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the boto3(Python module). 
+4. And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the __Boto3__ (Python module). 
 
 link to see the output on AWS SERVER: [GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
 
