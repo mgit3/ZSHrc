@@ -1,30 +1,30 @@
-__In this project, 
+### this project, 
 
--I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
+1. I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
--Then I organized the output data to be ingested into a dataset in a CSV format using the Pandas(Python module).
+2. Then I organized the output data to be ingested into a dataset in a CSV format using the Pandas(Python module).
 
--From the dataset, I produce an interactive graph about my upload and download rate using the Plotly(Python module). 
+3. From the dataset, I produce an interactive graph about my upload and download rate using the Plotly(Python module). 
+ 
+4. And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the boto3(Python module). 
 
--And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the boto3(Python module). 
+link[OUTPUT GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
 
-output >>> http://roberto-server.s3.amazonaws.com/graph.html
+### To use 4 the 1st time:
 
-__To use 4 the 1st time:
+1. First install the requirements, with "install_requirements.sh" using bash.
 
--First install the requirements, with "install_requirements.sh" using bash.
-
--Secondoly, create the dataset with "creatingDataset.py" using python.
+2. Secondoly, create the dataset with "creatingDataset.py" using python.
 
 
-__Use the "mainFile.py" to run:
+### Use the "mainFile.py" to run:
 
--os.system("bash speedTest.sh") --> to collect data about your internet speed.
+` os.system("bash speedTest.sh") --> to collect data about your internet speed. `
 
--os.system("python3 populatingSpeedtest.py") --> to populate the database with the new data
+` os.system("python3 populatingSpeedtest.py") --> to populate the database with the new data` 
 
--os.system("python3 dash_plotly.py") --> to vizualize the models in the dashboard
+` os.system("python3 dash_plotly.py") --> to vizualize the models in the dashboard` 
   
-To see the dashboard access this address "http://127.0.0.1:8050/" in your web-browser.
+To see the dashboard access this address "http://127.0.0.1:8050/" in your web-browser
 
 You also can vizualize the database in terminal with the "tabulateSpeedtest.py".
