@@ -10,9 +10,9 @@
 
 link to see the output on AWS SERVER: [GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
 
-### To use 4 the 1st time:
+### To use the code for the first time:
 
-1. First install the requirements, with "install_requirements.sh" using bash.
+1. First install the requirements, with "install_requirements.sh" using __bash__.
 
 2. Secondoly, create the dataset with "creatingDataset.py" using python.
 
