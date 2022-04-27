@@ -19,12 +19,15 @@ link[OUTPUT GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
 
 ### Use the "mainFile.py" to run:
 
-` os.system("bash speedTest.sh") --> to collect data about your internet speed. `
+` os.system("bash speedTest.sh")`
+To collect data about your internet speed. 
 
-` os.system("python3 populatingSpeedtest.py") --> to populate the database with the new data` 
+` os.system("python3 populatingSpeedtest.py") `
+To populate the database with the new data.
 
-` os.system("python3 dash_plotly.py") --> to vizualize the models in the dashboard` 
+` os.system("python3 dash_plotly.py") `
+To vizualize the models in the dashboard.
   
-To see the dashboard access this address "http://127.0.0.1:8050/" in your web-browser
+To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your web-browser.
 
-You also can vizualize the database in terminal with the "tabulateSpeedtest.py".
+You also can vizualize the database in terminal with the __"tabulateSpeedtest.py"__.
