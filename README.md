@@ -8,7 +8,7 @@
  
 4. And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the boto3(Python module). 
 
-link[OUTPUT GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
+link to see the output on AWS SERVER: [GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
 
 ### To use 4 the 1st time:
 
