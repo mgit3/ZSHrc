@@ -1,4 +1,4 @@
-### In this project, 
+## In this project, 
 
 1. I used __speedtest-CLI__ (Linux software) to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
