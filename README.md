@@ -1,4 +1,4 @@
-### this project, 
+### In this project, 
 
 1. I used speedtest-CLI(Linux software)  to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
@@ -20,12 +20,15 @@ link to see the output on AWS SERVER: [GRAPH](http://roberto-server.s3.amazonaws
 ### Use the "mainFile.py" to run:
 
 ` os.system("bash speedTest.sh")`
+
 To collect data about your internet speed. 
 
 ` os.system("python3 populatingSpeedtest.py") `
+
 To populate the database with the new data.
 
 ` os.system("python3 dash_plotly.py") `
+
 To vizualize the models in the dashboard.
   
 To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your web-browser.
