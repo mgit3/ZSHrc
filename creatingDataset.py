@@ -11,7 +11,7 @@ def clean(s):
     s = s.replace('\n','')
     return s
 
-lst = [clean(x) for x in df.columns]
+lst = [clean(x) for x in df.columns if 'IP' not in x]
 
 Server_ID =lst[0]
 Sponsor=lst[1]
@@ -22,7 +22,6 @@ Ping=lst[5]
 Download=lst[6]
 Upload=lst[7]
 Share=lst[8]
-IP_Adress=lst[9]
 
 tableName ='speedtest' 
 engine = create_engine("sqlite:///dataset_speedtest/main.db")
@@ -35,8 +34,8 @@ stmt = f"""CREATE TABLE speedtest(
                 {Distance} DECIMAL,
                 {Ping} TEXT,
                 {Download} DECIMAL,
-                {Upload} DECIMAL,
-                {IP_Adress} VARCHAR(13));"""
+                {Upload} DECIMAL
+                );"""
 
 results = connection.execute(stmt)
 

@@ -61,10 +61,18 @@ app.layout = html.Div(
     dcc.Graph(id='scatter_dwUp',figure=fig_scatter_dw_up,
     style={'margin':'auto','height':'400px'})], style={'color': textColor, 'margin': marginSize}),
 
+    html.Span(children=[
+
+      html.P(children=[f"Last Download Rate: {round(df['Download'].iloc[-1],2)} Mb/s."],style={'width':'350px','display':'inline-block'}),
+      html.P(children=[f"Last Upload Rate: {round(df['Upload'].iloc[-1],2)} Mb/s."],style={'width':'350px','display':'inline-block'}),
+    
+    ],style={'font-size':'18px','display':'inline-block', 'margin':'0px auto'}), 
+
+
     html.Div(children=[
     dash_table.DataTable(
       id='table',
-      data = df.tail(12).to_dict('records'),
+      data = df.tail(10).to_dict('records'),
       style_cell={'padding': '5px','backgroundColor':myColor,'font_size': '14px',},
       style_header={'backgroundColor':tableHeaderColor,'fontWeight': 'bold'})
     ],style={'color':textColor,'margin':marginSize}),

@@ -3,6 +3,7 @@ from tabulate import tabulate
 import pandas as pd
 from datetime import datetime
 import csv
+import os
 
 
 with open('dataset_speedtest/csvHeader.csv', 'r') as f:
@@ -27,8 +28,8 @@ df['Timestamp'] = datetime.now()
 
 #change the scale on of the value to be more readable
 # Build an insert statement to insert a record into the data table: insert_stmt
-df['Download'] = df['Download'] / (100**3)
-df['Upload'] = df['Upload'] / (100**3)
+df['Download'] = round((df['Download'] / (100**3)),2)
+df['Upload'] = round((df['Upload'] / (100**3)),2)
 
 
 #%%
@@ -62,3 +63,6 @@ print(repr(myTable))
 insert_stmt = insert(myTable).values(lst)
 
 result_proxy = engine.execute(insert_stmt)# %%
+
+
+os.system("rm -r dataset_speedtest/temp.csv")
