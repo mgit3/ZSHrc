@@ -1,4 +1,3 @@
-from datetime import datetime
 import pandas as pd
 from sqlalchemy import create_engine,MetaData,  Table, Column, Integer, String, DateTime
 
