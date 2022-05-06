@@ -18,6 +18,7 @@ def clean(s):
 #using a List comprehension to apply the function to clean the column names and ignore the columns with the IP address
 lst = [clean(x) for x in df.columns if 'IP' not in x]
 
+#collecting the items in the list and storing them in variables to use in the SQL command
 Server_ID =lst[0]
 Sponsor=lst[1]
 Server_Name=lst[2]
@@ -28,6 +29,7 @@ Download=lst[6]
 Upload=lst[7]
 Share=lst[8]
 
+#creating an engine to connect to the DB
 engine = create_engine("sqlite:///dataset_speedtest/main.db")
 connection = engine.connect()
 
