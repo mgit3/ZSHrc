@@ -6,10 +6,10 @@ from sqlalchemy import create_engine,MetaData,  Table, Column, Integer, String, 
 #csv file with the column names
 path = 'dataset_speedtest/csvHeader.csv'
 
-#reading the csv and transforming into a data frame, ignoring the last column with the iloc.
+#reading the csv and transforming it into a data frame, ignoring the last column with the iloc function.
 df = pd.read_csv(path).iloc[:,1:]
 
-#creating a function to clean the string on the column names
+#creating a function to clean the string of the column names
 def clean(s):
     s = s.replace(' ','_')
     s = s.replace('\n','')
@@ -29,10 +29,11 @@ Download=lst[6]
 Upload=lst[7]
 Share=lst[8]
 
-#creating an engine to connect to the DB
+#creating an engine to connect to the database
 engine = create_engine("sqlite:///dataset_speedtest/main.db")
 connection = engine.connect()
 
+#creating a table using SQL
 stmt = f"""CREATE TABLE speedtest(
                 {Sponsor}  VARCHAR(50),
                 {Server_Name}  VARCHAR(50),
@@ -43,5 +44,5 @@ stmt = f"""CREATE TABLE speedtest(
                 {Upload} DECIMAL
                 );"""
 
-#executing the command above
+#executing the SQL command above
 results = connection.execute(stmt)             
