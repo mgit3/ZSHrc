@@ -28,7 +28,6 @@ Download=lst[6]
 Upload=lst[7]
 Share=lst[8]
 
-tableName ='speedtest' 
 engine = create_engine("sqlite:///dataset_speedtest/main.db")
 connection = engine.connect()
 
