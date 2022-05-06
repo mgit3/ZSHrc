@@ -10,13 +10,13 @@ path = 'dataset_speedtest/csvHeader.csv'
 #reading the csv and transforming into a data frame, ignoring the last column with the iloc.
 df = pd.read_csv(path).iloc[:,1:]
 
-#creating a function to clean the column names
+#creating a function to clean the string on the column names
 def clean(s):
     s = s.replace(' ','_')
     s = s.replace('\n','')
     return s
 
-#using a listcomprehension to apply the function to clean the column names and ignore the columns with the IP address
+#using a List comprehension to apply the function to clean the column names and ignore the columns with the IP address
 lst = [clean(x) for x in df.columns if 'IP' not in x]
 
 Server_ID =lst[0]
@@ -44,6 +44,4 @@ stmt = f"""CREATE TABLE speedtest(
                 );"""
 
 #executing the command above
-results = connection.execute(stmt)
-
-                
+results = connection.execute(stmt)             
