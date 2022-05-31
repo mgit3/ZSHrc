@@ -7,3 +7,5 @@ pip install tabulate
 pip install sqlalchemy
 pip install dash
 pip install dash_bootstrap_components
+pip install matplotlib 
+pip install pandas
