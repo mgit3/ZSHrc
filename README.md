@@ -37,4 +37,4 @@ You also can vizualize the database in terminal with the __"tabulateSpeedtest.py
 
 Final Result:
 
-![graph](https://roberto-server.s3.amazonaws.com/graph.html)
+<img src="https://roberto-server.s3.amazonaws.com/graph.html"/>
