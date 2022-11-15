@@ -34,3 +34,7 @@ To vizualize the models in the dashboard.
 To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your web-browser.
 
 You also can vizualize the database in terminal with the __"tabulateSpeedtest.py"__.
+
+Final Result:
+
+![graph](https://roberto-server.s3.amazonaws.com/graph.html)
