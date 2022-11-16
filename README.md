@@ -35,4 +35,4 @@ To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your we
 
 You also can vizualize the database in terminal with the __"tabulateSpeedtest.py"__.
 
-[Main Graph inside of the dash board.](https://roberto-server.s3.amazonaws.com/graph.html)
+![screenshot](speedtest-CLI_dataEngineering/media_support/Screenshot from 2022-11-16 02-10-11.png)
