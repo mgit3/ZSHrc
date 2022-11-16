@@ -35,4 +35,9 @@ To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your we
 
 You also can vizualize the database in terminal with the __"tabulateSpeedtest.py"__.
 
-![screenshot](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/media_support/Screenshot%20from%202022-11-16%2002-10-11.png)
+Preview:
+
+![screenshot](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/media_support/Screenshot%20from%202022-11-16%2002-14-12.png)
+
+![screenshot2](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/media_support/Screenshot%20from%202022-11-16%2002-14-50.png)
+
