@@ -27,7 +27,7 @@ To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your we
 
 Preview:
 
-![screenshot](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/screenshot1.png)
+![screenshot](https://github.com/s33ding/speedtest/raw/main/media/screenshot1.png)
 
-![screenshot2](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/screenshot2.png)
+![screenshot2](https://github.com/s33ding/speedtest/raw/main/media/screenshot2.png)
 
