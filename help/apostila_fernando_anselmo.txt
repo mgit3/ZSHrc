@@ -1,0 +1,1 @@
+https://github.com/fernandoans/publicacoes/blob/master/Apostilas/RedisJavaPython/RedisJavaPython.pdf
