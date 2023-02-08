@@ -2,42 +2,32 @@
 
 1. I used __speedtest-CLI__ (Linux software) to collect data about the internet velocity of my residence and used a scheduler with the Cron(Linux Software) to repeat the task periodically. 
 
-2. Then I organized the output data to be ingested into a dataset in a CSV format using the __Pandas__ (Python module).
+2. Then I organized the output data to be ingested into  Redis.
 
-3. From the dataset, I produce an interactive graph about my upload and download rate using the __Plotly__ (Python module). 
+3. From the dataset on Redis, I produce an interactive graph about my upload and download rate using the __Plotly__ (Python module). 
  
-4. And finally, I share the graph on the internet through the S3(AWS Simple Cloud Storage ) using the __Boto3__ (Python module). 
-
-link to see the output on AWS SERVER: [GRAPH](http://roberto-server.s3.amazonaws.com/graph.html)
-
 ### To use the code for the first time:
 
-1. First install the requirements, with "install_requirements.sh" using __bash__.
+1. First install the requirements, with "pip install -r install/pip_requirements.sh; sudo bash install/system_requirements.sh" using __pip__ and __bash__.
 
-2. Secondoly, create the dataset with "creatingDataset.py" using python.
+2. Secondoly, create the dataset with "create_db.py" using python.
 
 
-### Use the "mainFile.py" to run:
+### Use the "main.py" to run:
 
-` os.system("bash speedTest.sh")`
+To collect data about your internet speed and to populate the database with the new data.
 
-To collect data about your internet speed. 
+` os.system("python3 pop.py") `
 
-` os.system("python3 populatingSpeedtest.py") `
-
-To populate the database with the new data.
+To vizualize the models in the dashboard.
 
 ` os.system("python3 dash_plotly.py") `
 
-To vizualize the models in the dashboard.
-  
 To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your web-browser.
-
-You also can vizualize the database in terminal with the __"tabulateSpeedtest.py"__.
 
 Preview:
 
-![screenshot](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/media_support/Screenshot%20from%202022-11-16%2002-14-12.png)
+![screenshot](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/screenshot1.png)
 
-![screenshot2](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/media_support/Screenshot%20from%202022-11-16%2002-14-50.png)
+![screenshot2](https://raw.githubusercontent.com/s33ding/speedtest-CLI_dataEngineering/main/screenshot2.png)
 
