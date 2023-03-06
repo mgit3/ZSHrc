@@ -38,4 +38,3 @@ case $choice in
         echo "Invalid choice. Please select an option from the menu."
         ;;
 esac
-
