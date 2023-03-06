@@ -1,6 +1,6 @@
 from useful_fuctions import * 
 
-clear_redis_database()
+#clear_redis_database()
 speedtest_data = run_speedtest()
 key = speedtest_data["datetime"]
 del speedtest_data["datetime"]
