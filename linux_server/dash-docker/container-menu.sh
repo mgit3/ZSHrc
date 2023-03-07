@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the container name
-container_name="redis"
+container_name="dash"
 
 # function to display the menu options
 function display_menu {

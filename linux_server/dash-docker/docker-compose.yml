@@ -1,12 +1,8 @@
 version: '3'
 services:
-  redis:
-    image: img-redis
-    command: redis-server --requirepass ${REDIS_PASSWORD}
-    restart: unless-stopped
-    container_name: redis
-    ports:
-      - "6379:6379"
-    environment:
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
-    command: redis-server --requirepass $REDIS_PASSWORD
+  dash:
+      image: img-dash
+      restart: unless-stopped
+      container_name: dash
+      ports:
+        - "8080:8050"
