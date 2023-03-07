@@ -1,13 +1,12 @@
 version: '3'
 services:
   dash:
-      image: img-dash
-      restart: unless-stopped
-      container_name: dash
-      ports:
-       - "8080:8050"
-      environment:
-       - REDIS_PASSWORD=${REDIS_PASSWORD}
-       - REDIS_HOST=${REDIS_HOST}
-       - REDIS_PORT=${REDIS_PORT}
-
+    image: img-dash
+    restart: unless-stopped
+    container_name: dash
+    ports:
+      - "8080:8050"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
