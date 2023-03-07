@@ -8,20 +8,20 @@ from click import style
 from matplotlib.pyplot import margins
 from datetime import datetime as dt
 import dash
-import dash_table
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dash_table
+from dash import dcc
+from dash import html
 import plotly.graph_objects as go
 import plotly.express as px
 
 def get_df():
     # Get data from Redis
     data = get_speedtest_data_from_redis()
-    print(data)
     # Create a Pandas dataframe from the data
     df = pd.DataFrame.from_dict(data['speedtest_data'], orient='index', columns=['download', 'upload'])
     df.reset_index(inplace=True)
     df.rename(columns={'index': 'datetime'}, inplace=True)
+    print(df)
     return df
 
 df = get_df() 
