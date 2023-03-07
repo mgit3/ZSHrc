@@ -5,11 +5,7 @@ import datetime
 import redis
 
 def redis_conn():
-    # Open and read the JSON file
-    with open(os.environ['REDIS_CRED'], 'r') as f:
-        db = json.load(f)
-    # Access the values in the JSON file
-    host, port, password = db['host'], db['port'], db['password']
+    host, port, password = os.environ['REDIS_HOST'], os.environ['REDIS_PORT'], os.environ['REDIS_PASSWORD']
     return redis.Redis(host=host, port=port, password=password)
 
 def clear_redis_database():

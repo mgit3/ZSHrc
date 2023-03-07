@@ -22,6 +22,7 @@ case $choice in
         docker rm $container_name
         docker rmi img-$container_name
         docker build . -t img-$container_name
+        docker compose up -d
         ;;
     1)
         echo "Building Docker Image..."

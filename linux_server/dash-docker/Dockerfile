@@ -15,5 +15,7 @@ RUN python -m pip install --user --no-cache-dir -r requirements.txt
 # Copy the application code
 COPY . .
 
+EXPOSE 8080
+
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
 CMD ["python", "main.py"]
