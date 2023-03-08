@@ -7,8 +7,9 @@
 3. From the dataset on Redis, I produce an interactive graph about my upload and download rate using the __Plotly__ (Python module). 
  
 
-To see the dashboard access this address __"http://170.187.195.209:5000"__ in your web-browser.
+To see the dashboard access this address __"http://170.187.195.209:5000"__ in your web-browser or scan the QR code bellow.
 
+![QR_CODE](https://github.com/s33ding/speedtest/raw/main/media/QR_code.png)
 
 
 Preview:
