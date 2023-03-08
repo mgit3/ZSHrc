@@ -1,0 +1,10 @@
+redis
+plotly
+nbformat
+tabulate
+dash
+dash_bootstrap_components
+matplotlib 
+pandas
+gunicorn==20.0.4
+
