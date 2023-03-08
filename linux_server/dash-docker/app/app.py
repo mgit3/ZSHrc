@@ -153,4 +153,4 @@ html.Div(children=[
 
 # Set the app to run in development mode
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
