@@ -6,24 +6,10 @@
 
 3. From the dataset on Redis, I produce an interactive graph about my upload and download rate using the __Plotly__ (Python module). 
  
-### To use the code for the first time:
 
-1. First install the requirements, with "pip install -r install/pip_requirements.sh; sudo bash install/system_requirements.sh" using __pip__ and __bash__.
-
-2. Secondoly, create the dataset with "create_db.py" using python.
+To see the dashboard access this address __"http://170.187.195.209:5000"__ in your web-browser.
 
 
-### Use the "main.py" to run:
-
-To collect data about your internet speed and to populate the database with the new data.
-
-` os.system("python3 pop.py") `
-
-To vizualize the models in the dashboard.
-
-` os.system("python3 dash_plotly.py") `
-
-To see the dashboard access this address __"http://127.0.0.1:8050/"__ in your web-browser.
 
 Preview:
 
