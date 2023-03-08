@@ -1,19 +1,12 @@
-# For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.8-slim
+FROM python:3.8-slim-buster
+RUN apt-get update
+RUN apt-get install nano
 
-# Create a non-root user and switch to that user
-RUN useradd --create-home appuser
-USER appuser
-
-# Set the working directory
-WORKDIR /app
-
-# Install dependencies
-COPY requirements.txt .
-RUN python -m pip install --user --no-cache-dir -r requirements.txt
-
-# Copy the application code
-COPY . .
-
-# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["python", "main.py"]
+RUN mkdir wd
+WORKDIR wd
+COPY app/requirements.txt .
+RUN pip3 install -r requirements.txt
+ 
+COPY app/ ./
+ 
+CMD [ "gunicorn", "--workers=5", "--threads=1", "-b 0.0.0.0:80", "app:server"]
