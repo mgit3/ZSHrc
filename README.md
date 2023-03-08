@@ -9,7 +9,7 @@
 
 To see the dashboard access this address __"http://170.187.195.209:5000"__ in your web-browser or scan the QR code bellow.
 
-![QR_CODE](https://github.com/s33ding/speedtest/raw/main/media/QR_code.png)
+![QR_CODE](https://raw.githubusercontent.com/s33ding/speedtest/main/media/QR_Code.png?token=GHSAT0AAAAAAB7YX6KNBJ4JI33363OKYHDYZAJFFJA)
 
 
 Preview:
