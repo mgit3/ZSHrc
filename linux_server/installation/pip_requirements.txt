@@ -1,7 +1,0 @@
-plotly
-nbformat
-tabulate
-dash
-dash_bootstrap_components
-matplotlib 
-pandas
