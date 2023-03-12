@@ -11,7 +11,7 @@ To see the dashboard access this address __"http://170.187.195.209:5000"__ in yo
 
 ![QR_CODE](https://raw.githubusercontent.com/s33ding/speedtest/main/media/QR_Code.png?token=GHSAT0AAAAAAB7YX6KNBJ4JI33363OKYHDYZAJFFJA)
 
-DIAGRAM:
+Diagram:
 
 ![DIAGRAM](https://github.com/s33ding/speedtest/blob/main/media/diagram.jpg)
 
