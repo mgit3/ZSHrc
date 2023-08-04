@@ -21,4 +21,5 @@ Preview:
 
 ![screenshot2](https://github.com/s33ding/speedtest/raw/main/media/screenshot2.png)
 
-Please note that as of [current date], the server hosting the interactive graph dashboard has been deactivated. As a result, the link "http://170.187.195.209:5000" is no longer accessible, and the dashboard cannot be viewed. The project's code and data are still available for reference on this repository. Thank you for your understanding.
+Observation:
+Please note that the server hosting the interactive graph dashboard has been deactivated. As a result, the link "http://170.187.195.209:5000" is no longer accessible, and the dashboard cannot be viewed at the moment. However, you can still find the project's code and data available for reference in this repository. Thank you for your understanding.
